@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
         listView.setOnItemClickListener { parent, view, position, id ->
             val selectedPlanet = planetsArrayList[position]
             Toast.makeText(this,
-                "Clicked on: ${selectedPlanet.planetName}",
+                "Clicked on: ${(listView.adapter.getItem(position) as Planet).planetName}, " +
+                        "that have:  ${selectedPlanet.moonCount} moons",
                 Toast.LENGTH_SHORT).show()
         }
 
